@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>Calcolo MCD e mcm </title>
+ 
+  <link rel="stylesheet" type="text/css" href="mcdmcm.css">
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  
+<script type="text/javascript">
+<!-- Begin
+function go(input1,input2,input3,input4){
+if (document.form1.text3.value=="" && document.form1.text4.value==""){
+document.form1.answer.value=hcf(input1,input2);
+document.form1.answer2.value=lcm(input1,input2);
+} 
+
+if (document.form1.text3.value!="" && document.form1.text4.value==""){
+document.form1.answer.value=hcf(hcf(input1,input2),input3);
+document.form1.answer2.value=lcm(lcm(input1,input2),input3);
+} 
+
+if (document.form1.text3.value!="" && document.form1.text4.value!=""){
+document.form1.answer.value=hcf(hcf(hcf(input1,input2),input3),input4);
+document.form1.answer2.value=lcm(lcm(lcm(input1,input2),input3),input4);
+}
+
+}
+
+function hcf(text1,text2){
+var gcd=1;
+if (text1>text2) {text1=text1+text2; text2=text1-text2; text1=text1-text2;}
+if ((text2==(Math.round(text2/text1))*text1)) {gcd=text1}else {
+for (var i = Math.round(text1/2) ; i > 1; i=i-1) {
+if ((text1==(Math.round(text1/i))*i))
+if ((text2==(Math.round(text2/i))*i)) {gcd=i; i=-1;}
+}
+}
+return gcd;
+}
+
+function lcm(t1,t2){
+var cm=1;
+var f=hcf(t1,t2);
+cm=t1*t2/f;
+return cm;
+}
+//  End -->
+</script>
+
+</head>
+
+<body>
+
+<h1 style="text-align: center">Calcolo MCD e mcm</h1>
+
+<form name="form1">
+
+  <p><font color="red">*</font><font size="3" face="Arial">Primo numero: </font><font face="Arial" size="3"> <input
+  type="text" name="text1" size="5"><br>
+  <font color="red">*</font>Secondo numero: </font><font face="Arial" size="3"> <input type="text"
+  name="text2" size="5"><br
+ >
+  Terzo numero: </font><font face="Arial" size="3"> <input type="text"
+  name="text3" size="5"> (facoltativo<br
+ >
+  Quarto numero: </font><font face="Arial" size="3"> <input type="text"
+  name="text4" size="5"> (facoltativo)<br>
+  <br>
+
+  </font><font face="Arial" size="3">
+
+  <input type="button" value="Calcola il m.c.m. e il M.C.D."
+  onclick="go(eval(document.form1.text1.value),eval(document.form1.text2.value),eval(document.form1.text3.value),eval(document.form1.text4.value))">
+  <br>
+  <br>
+  Massimo comun divisore (M.C.D.): </font><font face="Arial" size="3"> <input type="text" name="answer" size="15" readonly="readonly"
+ ><br>
+  Minimo comune multiplo (m.c.m.): </font>
+	<font face="Arial" size="3"> <input type="text" name="answer2" size="15" readonly="readonly"></font></p>
+</form>
+
+<table border="1" width="100%" id="table1">
+	<tr>
+		<td>Attenzione: le caselle vanno riempite nell'ordine dato: primo, secondo, terzo, quarto numero, altrimenti i risultati potrebbero essere sbagliati! 
+
+</td>
+	</tr>
+</table>
+</body>
+</html>
